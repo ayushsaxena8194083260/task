@@ -1,0 +1,17 @@
+<div id="parent">
+
+    <p><app-one [message]='text'></app-one></p>
+    <p><app-two [message]='text'></app-two></p>
+    <p><app-three [message]='text'></app-three></p>
+    <p><app-four [message]='text'></app-four></p>
+    <p>
+      <input    [ngModel]='text' 
+      (ngModelChange)='onChange($event)' placeholder="Enter Text Here...!" /></p>
+      <p>Task 3</p>
+      <p> <span><a  [routerLink]="['/task2']">View Task 2</a></span>  </p>
+      <!-- <h2>{{text}}</h2> -->
+   
+  </div> 
+  
+  
+  

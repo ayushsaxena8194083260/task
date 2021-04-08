@@ -1,0 +1,33 @@
+<div class="container">
+  
+  <h1>Task 2</h1>
+  
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <table class="table table-bordered" formArrayName="phoneNumber">
+      <tr>
+        <th colspan="2">Add Multiple Phone:</th>
+        <th width="150px"><button type="button" (click)="addQuantity()" class="btn btn-primary">Add More</button></th>
+      </tr>
+      <tr *ngFor="let quantity of phoneNumber().controls; let i=index" [formGroupName]="i">
+    
+        <td>
+            Phone Number:
+            <input type="number" formControlName="phoneNumber" class="form-control">
+        </td>
+        <td>
+            <button (click)="removeQuantity(i)" class="btn btn-danger">Remove</button>
+        </td>
+      </tr>
+    </table>
+   
+    <button type="submit" class="btn btn-success">Submit</button>
+    
+  </form>
+  
+  <br/>
+  {{this.productForm.value | json}}
+</div>
+<h3 *ngIf="this.array">Final output</h3>
+<div *ngFor="let  u of array ">
+  <h1>{{u.phoneNumber}}</h1>
+  </div>
